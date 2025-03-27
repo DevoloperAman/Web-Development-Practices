@@ -82,7 +82,5 @@
 // for(a of text){
 //     console.log(a.toUpperCase());
 // } 
-let  dbl = []
-const number =  [ 1,2,3,4,5,6,7,8,9,10]
-number.forEach(  number =>dbl.push(number*2))
-console.log(dbl);
+
+
