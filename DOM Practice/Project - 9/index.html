@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Toggler </title>
+</head>
+<body style="height: 90vh; width: 100%; display: flex; justify-content: center; align-items: center;">
+
+
+    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; border: 2px solid black; height: 100%; width: 50%; border-radius: 20px; background-color: #faf4f4;">
+    <h1 id="Heading"> <span style="color: red;">Current Status</span>  : Your Images is Visible  </h1>
+    <img style="height: 30%; width: 30%; object-fit: cover;" id="Image" src="img.webp" alt="">
+    <button  style="margin-top: 40px; height: 8vh; width: 30vh;  border-radius: 50px; font-size: 1.5rem; margin-bottom: 50px;  cursor: pointer;"  id="button" >Toggle Button  </button>
+    </div>
+
+    <script>
+        const Line = document.getElementById('Heading')
+        const photo = document.getElementById('Image')
+        const btn = document.getElementById('button')
+
+        btn.addEventListener("click" , function toggleImage  (){
+            if(photo.style.opacity==="0"){
+                photo.style.opacity="1"
+                Line.innerText = " Current Status : Your Image is visible "
+            }
+            
+            
+            else {
+                photo.style.opacity="0"
+                Line.innerText = "   Current Status : Your Image not  is visible "
+            }
+        })
+    </script>
+</body>
+</html>

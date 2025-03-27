@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - 6 </title>
+</head>
+<body>
+    <h1 class="Haeding">This is Light mode </h1>
+    <button id="button">Toggle Theme </button>
+
+
+    <script>
+        const Haeding = document.querySelector(".Haeding")
+        const button = document.querySelector("#button")
+
+        let isDarkTheme = false
+        button.addEventListener("click" ,  function(){
+            if(   isDarkTheme ){
+                document.body.style.backgroundColor = "white";
+                Haeding.innerHTML = "This is Light theme";
+                Haeding.style.color = "black";
+            } else{
+                document.body.style.backgroundColor = "black";
+                Haeding.innerHTML = "This is Dark theme";
+                Haeding.style.color = "white";
+            }
+
+            isDarkTheme = !isDarkTheme;
+        })
+    </script>
+
+</body>
+</html>

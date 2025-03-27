@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Question 4</title>
+</head>
+<body>
+    <span class="toRemove">Remove me</span>
+    <button onclick="removeElement()">Remove Element</button>
+
+    <script>
+        function removeElement() {
+            let element = document.querySelector('.toRemove');
+            element.parentNode.removeChild(element);
+        }
+    </script>
+</body>
+</html>
+

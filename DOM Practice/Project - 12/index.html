@@ -1,0 +1,38 @@
+<!DOCTYPE html >
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #clock{
+        display: flex;
+        justify-content: center;
+        height: 90vh;
+        align-items: center;
+        font-size: 6rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+<body>
+    <div id="clock"> 00:00:00</div>
+
+    <script>
+        function updateclock(){
+            const now = new Date()
+            let hours = String(now.getHours()).padStart(2, "0")
+            let minutes = String(now.getMinutes()).padStart(2, "0")
+            let second = String(now.getSeconds()).padStart(2, "0")
+
+            const timeString = `${hours} : ${minutes} : ${second}` ; 
+            document.getElementById("clock").textContent = timeString
+            const color = `#${hours}${minutes}${second}`
+            document.body.style.backgroundColor = color
+        }
+        setInterval(updateclock, 1000);
+        updateclock()
+    </script>
+</body>
+</html>

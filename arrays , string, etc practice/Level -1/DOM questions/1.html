@@ -1,0 +1,27 @@
+<!-- 1. Write JavaScript to change the background color of a `<div>` with id `myDiv` to blue when a button is clicked.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Question-1 </title>
+</head>
+<body>
+    <div id="myDiv" style="width: 200px; height: 200px; background-color: lightgray;">
+        This is a div.
+    </div>
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="ReverseColor()">Reverse color</button>
+
+    <script>
+        function changeColor() {
+            document.getElementById("myDiv").style.backgroundColor = "blue";
+        }
+
+        function ReverseColor(){
+            document.getElementById("myDiv").style.backgroundColor = "white"
+        }
+    </script
+</body>
+</html>

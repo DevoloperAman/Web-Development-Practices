@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter Program</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f8ff;
+    }
+
+    .counter {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter" id="counter">0</div>
+  <div class="buttons">
+    <button id="start">Start</button>
+    <button id="reverse">Reverse</button>
+  </div>
+
+  <script>
+    const counterDisplay = document.getElementById('counter');
+    const startButton = document.getElementById('start');
+    const reverseButton = document.getElementById('reverse');
+
+    let isCounting = false; // To prevent button clicks during the count
+
+    // Help to Disable the Clicks while counting 
+    function countUp() {
+        if (isCounting) return;
+        isCounting = true;
+        startButton.disabled = true;
+        reverseButton.disabled = true;
+
+        let count = 0;
+        const interval = setInterval(() => {
+        counterDisplay.textContent = count;
+        if (count === 10) {
+            clearInterval(interval);
+            isCounting = false;
+            startButton.disabled = false;
+            reverseButton.disabled = false;
+        }
+        count++;
+        }, 1000);
+    }
+
+    function countDown() {
+      if (isCounting) return;
+      isCounting = true;
+      startButton.disabled = true;
+      reverseButton.disabled = true;
+
+      let count = 10;
+      const interval = setInterval(() => {
+        counterDisplay.textContent = count;
+        if (count === 0) {
+          clearInterval(interval);
+          isCounting = false;
+          startButton.disabled = false;
+          reverseButton.disabled = false;
+        }
+        count--;
+      }, 1000);
+    }
+
+    startButton.addEventListener('click', countUp);
+    reverseButton.addEventListener('click', countDown);
+  </script>
+</body>
+</html>

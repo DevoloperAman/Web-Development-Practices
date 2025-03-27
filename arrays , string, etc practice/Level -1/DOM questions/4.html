@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Question 5</title>
+    <style>
+        .active {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleBtn" onclick="toggleClass()">Toggle Active</button>
+
+    <script>
+        function toggleClass() {
+            document.getElementById('toggleBtn').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

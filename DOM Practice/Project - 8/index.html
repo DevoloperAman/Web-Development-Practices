@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 90vh;">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px; border: 2px solid black; width: 30% ; height: 45vh; border-radius: 40px ; background-color: rgb(227, 241, 253);">
+
+
+        <h1>Sign Up Form </h1>
+        <label for="name"> Name : <input type="text" id="name"></label>
+        <label for="mail"> E-Mail : <input type="email" id="mail"></label>
+        <label for="password"> Password : <input type="password" id="password"></label>
+        <button id="button">Submit</button>
+    </div>
+    
+    <script>
+        const userName = document.getElementById("name")
+        const userMail = document.getElementById("mail")
+        const userPassword = document.getElementById("password")
+        const SubmitButton = document.getElementById("button")
+        
+        SubmitButton.addEventListener("click" ,function formValidtion(){
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(userName.value.length>=3  && userPassword.value.length>=8 && emailPattern.test(userMail.value)){
+                alert("Form Validation Succesfull")
+            } else{
+                alert("Form Validation Failed , Plese Enter Valid Crediantial ")
+            }
+        } )
+        
+    </script>
+</body>
+</html>

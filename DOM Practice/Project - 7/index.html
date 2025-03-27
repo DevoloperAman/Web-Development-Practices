@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 7 Counter App </title>
+</head>
+<body>
+    <h1> Counter </h1>
+    <div style="display: flex; gap: 10px; margin-left: 15px;">
+    <button id="increament_Button">+</button>
+    <h2 id="count">0</h2>
+    <button id="decrement_Button"> - </button>
+    </div>
+
+
+    <script>
+        let countrValue  = 0
+        let plus = document.getElementById("increament_Button")
+        let counting = document.getElementById("count")
+        let minus = document.getElementById("decrement_Button")
+
+        plus.addEventListener('click',function(){
+            countrValue++
+            counting.innerHTML = countrValue
+        })
+
+        minus.addEventListener('click',function(){
+            if(countrValue <= 0){
+                alert("Counting do not go beyand 0")
+            }
+            countrValue--
+            counting.innerHTML = countrValue
+            
+        })
+    </script>
+</body>
+</html>
